@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Learning Hub - Course Details</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Student Learning Hub</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html" class="active">Courses</a></li>
+          <li><a href="register.html">Register/Login</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="details-card">
+      <h2 id="courseTitle">Course Details</h2>
+      <p id="courseDescription">
+        Select a course from the courses page to view complete details.
+      </p>
+
+      <h3>Instructor Details</h3>
+      <p><strong>Name:</strong> <span id="instructorName">-</span></p>
+      <p><strong>Experience:</strong> <span id="instructorExperience">-</span></p>
+
+      <h3>Curriculum</h3>
+      <ul id="courseCurriculum">
+        <li>No course selected yet.</li>
+      </ul>
+
+      <p><strong>Duration:</strong> <span id="courseDuration">-</span></p>
+      <button id="enrollButton" class="btn" type="button">Enroll Now</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Student Learning Hub</p>
+  </footer>
+
+  <script>
+    const coursesData = {
+      "web-development-basics": {
+        title: "Web Development Basics",
+        description: "Learn HTML, CSS, and JavaScript by building simple web pages and forms.",
+        instructor: "Katthi Goutham Reddy",
+        experience: "6 years in web development and training",
+        curriculum: [
+          "Introduction to HTML structure",
+          "CSS styling and page layout",
+          "JavaScript basics and DOM",
+          "Mini website project"
+        ],
+        duration: "8 Weeks"
+      },
+      "python-for-beginners": {
+        title: "Python for Beginners",
+        description: "Start coding with Python and practice using simple programs and exercises.",
+        instructor: "M.Manideep",
+        experience: "5 years teaching programming fundamentals",
+        curriculum: [
+          "Python syntax and variables",
+          "Loops and conditional statements",
+          "Functions and basic modules",
+          "Problem solving exercises"
+        ],
+        duration: "7 Weeks"
+      },
+      "introduction-to-data-science": {
+        title: "Introduction to Data Science",
+        description: "Understand data analysis concepts, basic statistics, and beginner tools.",
+        instructor: "Billa Srishant",
+        experience: "4 years in analytics and data projects",
+        curriculum: [
+          "Data science overview",
+          "Data cleaning and preparation",
+          "Visualization basics",
+          "Intro to machine learning ideas"
+        ],
+        duration: "9 Weeks"
+      },
+      "ui-ux-fundamentals": {
+        title: "UI/UX Fundamentals",
+        description: "Learn user interface and user experience basics for web and mobile products.",
+        instructor: "k.badrinath",
+        experience: "3 years in UI/UX design and prototyping",
+        curriculum: [
+          "Design principles",
+          "Wireframing and prototyping",
+          "Typography and color basics",
+          "Usability testing introduction"
+        ],
+        duration: "6 Weeks"
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const selectedCourse = params.get("course");
+    const details = coursesData[selectedCourse];
+    const enrollButton = document.getElementById("enrollButton");
+
+    enrollButton.addEventListener("click", function () {
+      if (!selectedCourse) {
+        window.location.href = "courses.html";
+        return;
+      }
+
+      window.location.href = "register.html?course=" + encodeURIComponent(selectedCourse);
+    });
+
+    if (details) {
+      document.getElementById("courseTitle").textContent = details.title;
+      document.getElementById("courseDescription").textContent = details.description;
+      document.getElementById("instructorName").textContent = details.instructor;
+      document.getElementById("instructorExperience").textContent = details.experience;
+      document.getElementById("courseDuration").textContent = details.duration;
+
+      const curriculumList = document.getElementById("courseCurriculum");
+      curriculumList.innerHTML = "";
+      details.curriculum.forEach(function (item) {
+        const li = document.createElement("li");
+        li.textContent = item;
+        curriculumList.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<courses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="courses.xsd">
+  <course>
+    <title>Web Development Basics</title>
+    <instructor>Asha Menon</instructor>
+    <price>49.00</price>
+    <rating>4.5</rating>
+  </course>
+  <course>
+    <title>Python for Beginners</title>
+    <instructor>Rohan Iyer</instructor>
+    <price>59.00</price>
+    <rating>4.7</rating>
+  </course>
+  <course>
+    <title>Introduction to Data Science</title>
+    <instructor>Neha Kapoor</instructor>
+    <price>69.00</price>
+    <rating>4.6</rating>
+  </course>
+  <course>
+    <title>UI/UX Fundamentals</title>
+    <instructor>Arjun Das</instructor>
+    <price>39.00</price>
+    <rating>4.4</rating>
+  </course>
+</courses>
