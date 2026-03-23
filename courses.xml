@@ -3,26 +3,26 @@
          xsi:noNamespaceSchemaLocation="courses.xsd">
   <course>
     <title>Web Development Basics</title>
-    <instructor>Asha Menon</instructor>
-    <price>49.00</price>
+    <instructor>Katthi Goutham Reddy</instructor>
+    <price>4067.00</price>
     <rating>4.5</rating>
   </course>
   <course>
     <title>Python for Beginners</title>
-    <instructor>Rohan Iyer</instructor>
-    <price>59.00</price>
+    <instructor>M.Manideep</instructor>
+    <price>4897.00</price>
     <rating>4.7</rating>
   </course>
   <course>
     <title>Introduction to Data Science</title>
-    <instructor>Neha Kapoor</instructor>
-    <price>69.00</price>
+    <instructor>Billa Srishant</instructor>
+    <price>5727.00</price>
     <rating>4.6</rating>
   </course>
   <course>
     <title>UI/UX Fundamentals</title>
-    <instructor>Arjun Das</instructor>
-    <price>39.00</price>
+    <instructor>k.badrinath</instructor>
+    <price>3237.00</price>
     <rating>4.4</rating>
   </course>
 </courses>
